@@ -26,7 +26,7 @@ const Homew = () => {
     
 
       <Button variant='solid' colorScheme='blue' p='10'>
-        Using Chakrata UI
+        Using Chakra UI
       </Button>
   </Stack>
 </Card>

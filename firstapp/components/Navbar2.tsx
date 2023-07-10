@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ReactNode } from 'react'
+import {ethers} from "ethers";
 import {Button,useDisclosure,useColorMode,Link,Flex,
     MenuItem,MenuList,Icon,Avatar,HStack,Box,Input, Spacer,IconButton,Menu,MenuButton,useColorModeValue,Text, border} from  '@chakra-ui/react'
 import {FaSun,FaMoon} from 'react-icons/fa'
@@ -9,6 +10,7 @@ import {FiSun} from 'react-icons/fi'
 import {FiMoon} from 'react-icons/fi'
 import {GiBarbedStar} from 'react-icons/gi'
 import {ChevronDownIcon} from '@chakra-ui/icons'
+import Homes from './Homes';
 const Links=['Create','Coins','Activity']
 const NavLink=({children}:{children:ReactNode})=>(
     <Link
@@ -31,8 +33,25 @@ const Navbar2 = () => {
     const dropdown1=useDisclosure()
     const dropdown2=useDisclosure()
     const dropdown3=useDisclosure()
+    const [data,setdata]=useState({address:"",
+    Balance:"",});
+    const connectWallet = async  () => {
+            const walletData = await window.ethereum.request({method: 'eth_requestAccounts'});
+            const walletBalanceData = await window.ethereum.request({method: 'eth_getBalance',params:[walletData[0],'latest']});
+            setdata({
+                address:walletData[0],
+                Balance:ethers.formatEther(walletBalanceData)
+            })
+            console.log("The address is:",walletData[0])
+            console.log("The amount is:",walletBalanceData)
+        //    console.log(walletData);
+           }
+
+        
+
   return (
     <>
+
     <Flex alignItems='center' justifyContent={'center'} h='14' p='2'  bg={isdark?'gray.900':'white'} color={isdark?'white':'black'}>
         <Flex >
             <Link href='/logo'>
@@ -148,16 +167,20 @@ const Navbar2 = () => {
                   
                 </MenuList>  
             </Menu>
-            <Link href='/connect'>
+            
             <Button
+                onClick={connectWallet}
                 _hover={{bg:'red.200'}}
                 bg={'red.300'}
                 >
-                   Connect
+
+                   Connect  
             </Button>
-            </Link>
+         
         </HStack>
     </Flex>
+    <Homes add={data.address} bal={data.Balance}></Homes>
+
     </>
   )
 }

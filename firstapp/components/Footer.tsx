@@ -1,11 +1,17 @@
 import React from 'react'
-
+import {Flex} from '@chakra-ui/react'
+import { useColorMode } from '@chakra-ui/react'
 type Props = {}
 
 const Footer = (props: Props) => {
+  const {colorMode,toggleColorMode}=useColorMode()
+  const isdark=colorMode=='dark'
   return (
-    <div className='bg-red-200 text-2xl items-center text-center justify-center font-bold flex-row flex p-2 bottom-0 fixed w-[100vw]'>Footer- &copy;NonceBlox
-    </div>
+    <>
+    <Flex justifyContent={'center'} alignItems='center' pos={'fixed'} bottom={'0'} bg={isdark?'gray.900':'white'} h={'14'} w={'100vw'} >
+        Footer&copy;NonceBlox
+    </Flex>
+    </>
   )
 }
 export default Footer
