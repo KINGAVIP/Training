@@ -7,6 +7,7 @@ const Homes = (props) => {
       console.log("Ethereum");
     }
     }, []);
+
   return (
     <>
         <SimpleGrid m={'10'} spacing={12} padding={'10'}   templateColumns={'repeat(auto-fill,minmax(600px,1fr))'}>

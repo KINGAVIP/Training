@@ -179,7 +179,7 @@ const Navbar2 = () => {
          
         </HStack>
     </Flex>
-    <Homes add={data.address} bal={data.Balance}></Homes>
+    {/* <Homes add={data.address} bal={data.Balance}></Homes> */}
 
     </>
   )

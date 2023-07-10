@@ -8,6 +8,7 @@ import Homew from '../components/Homew'
 import Homes from '../components/Homes'
 import Detail from '../components/Details'
 import tailstyle from '../styles/Tailstyle.module.css'
+import Todo from '../components/Todo'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -17,7 +18,8 @@ export default function Home() {
       <title>Home page</title>
       <meta name='keywords' content='web development by avi' />
     </Head>
-    {/* <Homes></Homes> */}
+    {/* <Todo></Todo> */}
+    <Homes></Homes>
     </>
     
   )
