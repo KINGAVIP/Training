@@ -8,7 +8,8 @@ const Footer = (props: Props) => {
   const isdark=colorMode=='dark'
   return (
     <>
-    <Flex justifyContent={'center'} alignItems='center' pos={'fixed'} bottom={'0'} bg={isdark?'gray.900':'white'} h={'14'} w={'100vw'} >
+    <Flex justifyContent={'center'} alignItems='center' pos={'sticky'} 
+       bottom={'0'} bg={isdark?'gray.900':'white'} h={'14'} maxW={'100vw'} >
         Footer&copy;NonceBlox
     </Flex>
     </>

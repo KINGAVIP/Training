@@ -52,7 +52,7 @@ const Navbar2 = () => {
   return (
     <>
 
-    <Flex alignItems='center' justifyContent={'center'} h='14' p='2'  bg={isdark?'gray.900':'white'} color={isdark?'white':'black'}>
+    <Flex alignItems='center' justifyContent={'center'} h='14' p='2'   bg={isdark?'gray.900':'white'} color={isdark?'white':'black'}>
         <Flex >
             <Link href='/logo'>
             <Menu >
@@ -179,7 +179,7 @@ const Navbar2 = () => {
          
         </HStack>
     </Flex>
-    {/* <Homes add={data.address} bal={data.Balance}></Homes> */}
+    {/* <Homes add={data.address} bal={data.Balance}></Homes>    */}
 
     </>
   )

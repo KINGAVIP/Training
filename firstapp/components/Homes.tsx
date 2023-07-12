@@ -10,7 +10,7 @@ const Homes = (props) => {
 
   return (
     <>
-        <SimpleGrid m={'10'} spacing={12} padding={'10'}   templateColumns={'repeat(auto-fill,minmax(600px,1fr))'}>
+        <SimpleGrid m={'5'} spacing={12} padding={'10'} h={'fit-content'}  templateColumns={'repeat(auto-fill,minmax(400px,1fr))'}>
             <Card>
               <CardHeader>
                 <Heading>Wallet Address</Heading>
